@@ -1,8 +1,7 @@
-MAGNiTT Analytics — React + TypeScript Application
+React + TypeScript Application
 Visual comparison of VC funding across KSA, UAE, and Singapore using Recharts
 📌 Overview
-
-MAGNiTT Analytics is a React + TypeScript web application that allows users to:
+ React + TypeScript web application that allows users to:
 
 Select 1 to 3 countries (KSA, UAE, Singapore)
 
@@ -18,7 +17,7 @@ Deployed on Vercel.
 
 🚀 Live Demo
 
-🔗 Production Deployment:https://analytics-chart-new.vercel.app/
+🔗 Production Deployment: https://analytics-chart-new.vercel.app/
 
 🛠 Tech Stack
 Layer	Tools
