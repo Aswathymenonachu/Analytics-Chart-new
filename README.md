@@ -1,46 +1,139 @@
-# Getting Started with Create React App
+MAGNiTT Analytics — React + TypeScript Application
+Visual comparison of VC funding across KSA, UAE, and Singapore using Recharts
+📌 Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MAGNiTT Analytics is a React + TypeScript web application that allows users to:
 
-## Available Scripts
+Select 1 to 3 countries (KSA, UAE, Singapore)
 
-In the project directory, you can run:
+Compare Venture Capital funding trends over multiple years
 
-### `npm start`
+Visualize Number of Deals (Bar Chart) and Total Amount Raised (Line Chart)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Explore data interactively using filters, responsive charts, and dynamic rendering
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The project is implemented using the Atomic Design Architecture, ensuring scalability, reusability, and clean component organization.
 
-### `npm test`
+Deployed on Vercel.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🚀 Live Demo
 
-### `npm run build`
+🔗 Production Deployment:https://analytics-chart-new.vercel.app/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🛠 Tech Stack
+Layer	Tools
+Frontend Framework	React 18 + TypeScript
+Charting Library	Recharts
+Architecture	Atomic Design Pattern
+Styling	Inline styling (minimal; ready for future design system)
+State Management	React Hooks (useState, useEffect, useMemo)
+Deployment	Vercel
+Data	Static JSON files loaded from src/data/
+🧱 Atomic Design Architecture Explained
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project uses the Atomic → Molecule → Organism → Template → Page pattern.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🔹 Atoms
 
-### `npm run eject`
+Smallest, reusable UI components with no dependencies.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Examples:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Checkbox
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Card
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Heading
 
-## Learn More
+🔹 Molecules
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A combination of atoms to form meaningful functional units.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Example:
+
+CountrySelector
+
+Uses: Heading, Checkbox
+
+Accepts selected countries + update callbacks
+
+🔹 Organisms
+
+Complex UI sections composed of multiple molecules and atoms.
+
+Example:
+
+FundingComparisonChart
+
+Uses: Recharts components
+
+Visualizes multi-country data
+
+Shows bars + lines, dual y-axis, tooltips
+
+🔹 Templates
+
+Layout structures that define where organisms/molecules appear.
+
+Example:
+
+AnalyticsDashboardLayout
+
+Left sidebar (filters)
+
+Main content (chart)
+
+🔹 Pages
+
+Actual page views → fetch data, manage state, assemble templates.
+
+Example:
+
+FundingAnalyticsPage
+
+Loads JSON per country
+
+Caching logic:
+
+Country data loads only once (per country)
+
+Subsequent selection uses localStorage cache
+
+Cache TTL: 5 minutes
+
+Why Atomic Design?
+
+Atomic design ensures:
+
+🔄 Reusability → Atoms & molecules reused across project
+
+🎯 Maintainability → Clear boundaries between UI levels
+
+📐 Scalability → Easier to add features (dark mode, new filters, new charts)
+
+🧼 Cleaner Separation of Concerns → Pages handle logic, organisms handle UI
+
+Handles caching
+
+Manages selected country state
+
+Renders the entire dashboard
+
+Getting Started Locally
+1️⃣ Clone the repo
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Start development server
+npm start
+
+
+Runs at:
+👉 http://localhost:3000/
+
+4️⃣ Build for production
+npm run build
+
+
+Output goes to /build folder.
